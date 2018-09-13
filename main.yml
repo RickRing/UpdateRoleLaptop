@@ -1,0 +1,35 @@
+---
+- name: Update Systems
+  hosts: Systems
+  roles:
+   - Update
+
+- name: katello-package-upload
+  hosts: Sat6Clients
+  roles:
+   - PackageUpload
+
+- name: katello-tracer-upload
+  hosts: Sat6Clients
+  roles:
+   - Tracer
+
+- name: insights-client
+  hosts: Systems
+  roles:
+   - Insights
+
+- name: puppet agent -t
+  hosts: PuppetClients
+  roles:
+   - Puppet
+
+- name: update RHV hypervisors
+  hosts: RHEV
+  roles:
+   - UpdateRHV
+
+- name: clean logs
+  hosts: all
+  roles:
+   - CleanUpLogs

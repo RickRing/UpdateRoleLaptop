@@ -1,0 +1,13 @@
+---
+- name: run yum update
+  yum: name=* state=latest update_cache=yes
+- name: run insights-client
+  command: /usr/bin/insights-client
+- name: run katello-package-upload
+  command: /usr/sbin/katello-package-upload
+- name: run katello-tracer-upload
+  command: /usr/sbin/katello-tracer-upload
+- name: run puppet agent -t
+  command: 'puppet agent --onetime --no-daemonize --no-usecacheonfailure --no-splay --no-use_cached_catalog'
+ 
+

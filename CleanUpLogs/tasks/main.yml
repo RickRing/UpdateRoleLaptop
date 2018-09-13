@@ -1,0 +1,7 @@
+---
+- name: run find /var/log -name "*201*" -delete
+  command: find /var/log -name "*201*" -delete
+- name: run /usr/sbin/rmabrt
+  shell: /usr/sbin/rmabrt
+
+

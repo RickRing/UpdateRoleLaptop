@@ -1,0 +1,5 @@
+---
+- name: run puppet agent -t v2
+  command: 'puppet agent --onetime --no-daemonize --no-usecacheonfailure --no-splay --no-use_cached_catalog'
+
+
